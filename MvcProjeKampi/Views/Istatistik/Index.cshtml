@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="row">
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>@ViewBag.ToplamKategori</h3>
+                <p>Toplam Kategori</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>@ViewBag.YazilimBaslik</h3>
+                <p>Yazılım Başlık Sayısı</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>@ViewBag.AHarfiYazar</h3>
+                <p>'A' Harfi Geçen Yazar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>@ViewBag.EnFazlaBaslikKategori</h3>
+                <p>En Fazla Başlığa Sahip Kategori</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row mt-3">
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-secondary">
+            <div class="inner">
+                <h3>@ViewBag.KategoriDurumFarki</h3>
+                <p>Aktif - Pasif Kategori Farkı</p>
+            </div>
+        </div>
+    </div>
+</div>
