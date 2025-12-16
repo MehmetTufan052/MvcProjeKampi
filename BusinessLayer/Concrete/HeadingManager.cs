@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
            return _headingDal.Get(x => x.HeadingID == id);
         }
 
+        public Heading GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Heading> GetList()
         {
             return _headingDal.List();
@@ -35,7 +40,10 @@ namespace BusinessLayer.Concrete
 
         public void HeadingDelete(Heading heading)
         {
-            _headingDal.Delete(heading);
+            
+            _headingDal.Update(heading);
+
+
         }
 
         public void HeadingUpdate(Heading heading)
