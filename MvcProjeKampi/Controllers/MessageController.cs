@@ -25,6 +25,11 @@ namespace MvcProjeKampi.Controllers
             var messagelist = mm.GetListSendbox();
             return View(messagelist);
         }
+        public ActionResult GetInboxMessageDetails(int id)
+        {
+            var values = mm.GetByID(id);
+            return View(values);
+        }
         [HttpGet]
         public ActionResult NewMessage()
         {
@@ -41,5 +46,6 @@ namespace MvcProjeKampi.Controllers
             var values = mm.GetDraftMessages("admin@gmail.com");
             return PartialView(values);
         }
+
     }
 }
