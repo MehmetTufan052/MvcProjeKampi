@@ -1,0 +1,15 @@
+﻿
+@model List<EntityLayer.Concrete.Message>
+
+<h5>Taslaklar</h5>
+
+@foreach (var item in Model)
+{
+    <div class="card mb-2">
+        <div class="card-body">
+            <h6>@item.Subject</h6>
+            <p class="text-muted">@item.MessageContent</p>
+            <small>@item.MessageDate.ToShortDateString()</small>
+        </div>
+    </div>
+}
