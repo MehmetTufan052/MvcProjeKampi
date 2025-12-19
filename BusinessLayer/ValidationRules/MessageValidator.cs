@@ -10,7 +10,7 @@ namespace BusinessLayer.ValidationRules
 {
     public class MessageValidator : AbstractValidator<Message>
     {
-        MessageValidator()
+        public MessageValidator()
         {
             RuleFor(x => x.ReceiverMail).NotEmpty().WithMessage("Alıcı Mail Alanını Boş Geçemezsiniz");
             RuleFor(x => x.Subject).NotEmpty().WithMessage("Konu Alanını Boş Geçemezsiniz");

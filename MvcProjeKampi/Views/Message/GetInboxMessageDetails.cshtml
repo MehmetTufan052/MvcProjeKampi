@@ -39,7 +39,21 @@
                         <!-- /.card-header -->
                         <div class="card-body p-0">
                             <div class="mailbox-read-info">
-                                <h5>Konu: @Html.DisplayFor(x => x.Subject)</h5>
+                                <h5>
+                                    Konu: @Html.DisplayFor(x => x.Subject)
+
+                                    @if (Model.IsRead)
+                                    {
+                                        <span class="badge badge-success ml-2">Okundu</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-danger ml-2">Okunmadı</span>
+                                    }
+
+
+
+                                </h5>
                                 <br />
 
                                 <h6>
@@ -48,7 +62,6 @@
                                 </h6>
                             </div>
                             <!-- /.mailbox-read-info -->
-                            
                             <!-- /.mailbox-controls -->
                             <div class="mailbox-read-message">
                                 <p>@Html.DisplayFor(x => x.MessageContent)</p>
@@ -62,7 +75,7 @@
                 </div>
                 <!-- /.col -->
             </div>
-            <!-- /.row -->
+        </div>     <!-- /.row -->
     </section>
 </body>
 </html>

@@ -23,6 +23,9 @@ namespace EntityLayer.Concrete
         public string MessageContent { get; set; }
 
         public DateTime MessageDate { get; set; }
+       
         public bool Status { get; set; }
+
+        public bool IsRead { get; set; }    
     }
 }
