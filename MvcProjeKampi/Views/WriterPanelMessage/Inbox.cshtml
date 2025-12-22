@@ -1,0 +1,99 @@
+﻿@using EntityLayer.Concrete
+@model List<Message>
+@{
+    ViewBag.Title = "Inbox";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Mesaj Sayfası</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            @Html.Action("MessageListMenu", "WriterPanelMessage")
+
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">Gelen Mesajlar</h3>
+                    </div>
+
+                    <div class="card-body p-0">
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+
+                                    @foreach (var item in Model)
+                                    {
+
+                                        <tr class="@(item.IsRead ? "" : "font-weight-bold")">
+                                            <td>
+                                                <div class="icheck-primary">
+                                                    <input type="checkbox" value="" id="check_@item.MessageID">
+                                                    <label for="check_@item.MessageID"></label>
+                                                </div>
+                                            </td>
+
+                                            <td class="mailbox-star">
+                                                <a href="~/WriterPanelMessage/GetInboxMessageDetails/@item.MessageID">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </a>
+                                            </td>
+
+                                            <td class="mailbox-name">
+                                                <a href="~/WriterPanelMessage/GetInboxMessageDetails/@item.MessageID">
+                                                    @item.SenderMail
+                                                </a>
+                                            </td>
+
+                                            <td class="mailbox-subject">
+
+                                                @if (!item.IsRead)
+                                                {
+                                                    <span class="badge badge-danger mr-2">Yeni</span>
+                                                }
+
+                                                @if (item.IsRead)
+                                                {
+                                                    <span class="badge badge-success mr-2">Okundu</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge badge-danger mr-2">Okunmadı</span>
+                                                }
+
+                                                <b>@item.Subject</b> - @item.MessageContent ...
+                                            </td>
+
+                                            <td class="mailbox-date">
+                                                @(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+

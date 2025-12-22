@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
@@ -59,18 +60,22 @@
     <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkillDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\WriterRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfSkillDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202512111122534_mig1.cs" />
     <Compile Include="Migrations\202512111122534_mig1.Designer.cs">
@@ -124,6 +129,14 @@
     <Compile Include="Migrations\202512190824486_AddIsReadToMessage.Designer.cs">
       <DependentUpon>202512190824486_AddIsReadToMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202512191432082_mig_adminhashsalt_add.cs" />
+    <Compile Include="Migrations\202512191432082_mig_adminhashsalt_add.Designer.cs">
+      <DependentUpon>202512191432082_mig_adminhashsalt_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202512201127260_mig_addskills.cs" />
+    <Compile Include="Migrations\202512201127260_mig_addskills.Designer.cs">
+      <DependentUpon>202512201127260_mig_addskills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -176,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512190824486_AddIsReadToMessage.resx">
       <DependentUpon>202512190824486_AddIsReadToMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512191432082_mig_adminhashsalt_add.resx">
+      <DependentUpon>202512191432082_mig_adminhashsalt_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512201127260_mig_addskills.resx">
+      <DependentUpon>202512201127260_mig_addskills.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

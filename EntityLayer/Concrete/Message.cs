@@ -26,6 +26,7 @@ namespace EntityLayer.Concrete
        
         public bool Status { get; set; }
 
-        public bool IsRead { get; set; }    
+        public bool IsRead { get; set; }
+
     }
 }

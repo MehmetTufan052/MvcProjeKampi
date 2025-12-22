@@ -37,6 +37,16 @@ namespace BusinessLayer.Concrete
            _writerDal.Delete(writer);
         }
 
+        public bool WriterLogin(string mail, string password)
+        {
+            var writer = _writerDal.Get(
+            x => x.WriterMail == mail
+              && x.WriterPassword == password
+        );
+
+            return writer != null;
+        }
+
         public void WriterUpdate(Writer writer)
         {
             _writerDal.Update(writer);
