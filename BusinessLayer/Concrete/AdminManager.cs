@@ -18,9 +18,35 @@ namespace BusinessLayer.Concrete
         {
             _adminDal = adminDal;
         }
+
+        public void AdminAdd(Admin admin)
+        {
+            _adminDal.Insert(admin);
+        }
+
+        public void AdminDelete(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AdminUpdate(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Admin GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Admin GetByUserName(string username)
         {
             return _adminDal.GetByUserName(username);
+        }
+
+        public List<Admin> GetList()
+        {
+            return _adminDal.List();
         }
 
         public bool HasRole(string username, string role)

@@ -9,6 +9,12 @@ namespace BusinessLayer.Abstract
 {
     public interface IAdminService
     {
+        List <Admin>GetList();
+        void AdminAdd(Admin admin);
+        Admin GetByID(int id);
+        void AdminDelete(Admin admin);
+        void AdminUpdate(Admin admin);
+
         Admin GetByUserName(string username);
         bool Login(string username, string password);
         bool IsAdmin(string username);

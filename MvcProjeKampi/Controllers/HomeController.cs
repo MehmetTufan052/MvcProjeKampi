@@ -14,10 +14,14 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Index()
         {
-           return View();
+            return View();
         }
         [AllowAnonymous]
         public ActionResult HomePage()
+        {
+            return View();
+        }
+        public ActionResult SweetAlert()
         {
             return View();
         }
