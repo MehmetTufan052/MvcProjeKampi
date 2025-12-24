@@ -25,19 +25,16 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult Index(Admin p)
         {
+            var username = p.AdminUserName.Trim();
+
             bool loginResult = _adminManager.Login(
-                p.AdminUserName, p.AdminPassword);
+                username, p.AdminPassword);
 
             if (loginResult)
             {
-                FormsAuthentication.SetAuthCookie(
-                    p.AdminUserName, false);
-
-                return RedirectToAction(
-                    "Index", "AdminCategory");
+                FormsAuthentication.SetAuthCookie(username, false);
+                return RedirectToAction("Index", "AdminCategory");
             }
-
-            ViewBag.Error = "Kullanıcı adı veya şifre hatalı";
             return View();
         }
         [HttpGet]
